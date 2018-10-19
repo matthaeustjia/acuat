@@ -14,7 +14,8 @@ class CreateItemsTable extends Migration
     public function up()
     {
         Schema::create('items', function (Blueprint $table) {
-            $table->increments('id');
+            $table->string('id'); // to remove primary key
+            $table->primary('id'); //to add primary key
             $table->string('name');
             $table->string('description');
             $table->timestamps();

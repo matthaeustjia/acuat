@@ -5,9 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>@yield('currentpage')</title>
 
     <!-- Scripts -->
@@ -19,21 +16,26 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 <body>
     <div id="app">
         <nav class="container sticky-top navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">ACUA</a>
+            <a class="navbar-brand" href="/home">ACUA</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="myNavbar">
                         <ul class="nav navbar-nav mx-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Products</a>
+                                <a class="nav-link {{ request()->is('item') ? 'active' : '' }}" href="/item">Items</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Invoice Masuk</a>
+                                <a class="nav-link {{ request()->is('invoicemasuk') ? 'active' : '' }}" href="/invoicemasuk">Invoice Masuk</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Invoice Keluar</a>
@@ -70,7 +72,7 @@
                     </div>
         </nav>
 <br>
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>

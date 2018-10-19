@@ -17,3 +17,5 @@ Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('/item', 'ItemController');
+Route::resource('/invoicemasuk', 'InvoiceMasukController');

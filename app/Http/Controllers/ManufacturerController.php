@@ -74,6 +74,18 @@ class ManufacturerController extends Controller
     public function update(Request $request, Manufacturer $manufacturer)
     {
         //
+        $validate = $request->validate([
+            'id' => 'required',
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required'
+        ]);
+        $manufacturer->name = request('name');
+        $manufacturer->phone = request('phone');
+        $manufacturer->email = request('email');
+        $manufacturer->save();
+
+        return redirect()->action('ManufacturerController@index')->withSuccess($manufacturer->name .' Berhasil diedit');
     }
 
     /**
@@ -86,6 +98,6 @@ class ManufacturerController extends Controller
     {
         //
         $manufacturer->delete();
-        return redirect()->action('ManufacturerController@index')->withSuccess('Mendelete Item ' . $manufacturer->name . ' success');
+        return redirect()->action('ManufacturerController@index')->withSuccess('Mendelete Supplier ' . $manufacturer->name . ' success');
     }
 }

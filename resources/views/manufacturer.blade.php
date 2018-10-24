@@ -20,7 +20,10 @@
         <th>{{$manufacturer->email}}</th>    
         <th>
         <button type="button" class="btn-sm btn-warning" 
-         data-manufacturer-name="{{$manufacturer->name}}" data-manufacturer-id="{{$manufacturer->id}}" data-manufacturer-description="{{$manufacturer->description}}"
+            data-manufacturer-name="{{$manufacturer->name}}" 
+            data-manufacturer-id="{{$manufacturer->id}}" 
+            data-manufacturer-phone="{{$manufacturer->phone}}"
+            data-manufacturer-email="{{$manufacturer->email}}"
             data-toggle="modal" data-target="#manufacturerEditModal" ><i class="far fa-edit"></i>
         </button>
         <button type="button" class="btn-sm btn-danger" data-manufacturer-name="{{$manufacturer->name}}" data-manufacturer-id="{{$manufacturer->id}}" data-toggle="modal" data-target="#manufacturerDeleteModal"><i class="far fa-trash-alt"></i></button>
@@ -44,18 +47,19 @@
 
 @section('EditModalContent')
     <div class="modal-body">    
+            <input type="text" class="form-control" id="id" name="id" hidden>    
         <div class="form-group">
-            <label for="id">ID Produk</label>
-            <input type="text" class="form-control" id="id" name="id" readonly>    
+            <label for="id">Nama Supplier</label>
+            <input type="text" class="form-control" id="name" name="name" required>    
         </div>
         <div class="form-group">
-            <label for="id">Nama Produk</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+            <label for="id">Telepon Supplier</label>
+            <input type="text" class="form-control" id="phone" name="phone" required>
         </div>
         <div class="form-group">
-            <label for="id">Deskripsi</label>
-            <textarea class="form-control" id="description" name="description"></textarea>
-        </div>      
+            <label for="id">Email Supplier</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>     
     </div>  
 @endsection
 

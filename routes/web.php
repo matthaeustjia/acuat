@@ -23,7 +23,7 @@ Route::get('/item', 'ItemController@index');
 Route::post('/item', 'ItemController@store');
 Route::delete('/item/{item}', 'ItemController@destroy');
 Route::patch('/item/{item}', 'ItemController@update');
-Route::get('item/search', 'ItemController@search');
+Route::get('/item/search', 'ItemController@search');
 
 
 //Invoice Masuk Contoller
@@ -34,3 +34,4 @@ Route::get('/manufacturer', 'ManufacturerController@index');
 Route::post('/manufacturer', 'ManufacturerController@store');
 Route::delete('/manufacturer/{manufacturer}', 'ManufacturerController@destroy');
 Route::get('/manufacturer/search', 'ManufacturerController@search');
+Route::patch('/manufacturer/{manufacturer}', 'ManufacturerController@update');

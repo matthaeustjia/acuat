@@ -22,6 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/item', 'ItemController@index');
 Route::post('/item', 'ItemController@store');
 Route::delete('/item/{item}', 'ItemController@destroy');
+Route::patch('/item/{item}', 'ItemController@update');
 Route::get('item/search', 'ItemController@search');
 
 

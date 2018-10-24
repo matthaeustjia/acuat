@@ -20,10 +20,7 @@ class ItemController extends Controller
     public function index()
     {
         $items = Item::paginate(10);
-        if (!$items->isEmpty()) {
-            return view('item', compact('items'));
-        }
-        return view('item', compact('items'))->withErrors('Data Tidak ditemukan');
+        return view('item', compact('items'));
     }
 
     /**
@@ -86,7 +83,7 @@ class ItemController extends Controller
         $item->name = request('name');
         $item->description = request('description');
         $item->save();
-        
+
         return redirect()->action('ItemController@index')->withSuccess($item->id . ' Berhasil diedit');
     }
 

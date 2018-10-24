@@ -1,3 +1,5 @@
+//Item Modal
+//Delete Modal
 $('#itemDeleteModal').on('show.bs.modal', function (e) {
 
     var itemId = $(e.relatedTarget).data('item-id');
@@ -6,6 +8,7 @@ $('#itemDeleteModal').on('show.bs.modal', function (e) {
     //populate the textbox
 });
 
+//Edit Modal
 $('#itemEditModal').on('show.bs.modal', function (e) {
 
     var itemId = $(e.relatedTarget).data('item-id');
@@ -16,4 +19,16 @@ $('#itemEditModal').on('show.bs.modal', function (e) {
     $(e.currentTarget).find('textarea[name="description"]').val(itemDescription);
     $(editForm).get(0).setAttribute('action', '/item/' + $(editForm.id).val());
     //populate the textbox
+});
+
+//Manufacturer Modal
+//Delete Modal
+$('#manufacturerDeleteModal').on('show.bs.modal', function (e) {
+    var manufacturerId = $(e.relatedTarget).data('manufacturer-id');
+    var manufacturerName = $(e.relatedTarget).data('manufacturer-name');
+    $(e.currentTarget).find('input[name="manufacturerId"]').val(manufacturerId);
+    $(e.currentTarget).find('input[name="manufacturerName"]').val(manufacturerName);
+    $(deleteForm).get(0).setAttribute('action', '/manufacturer/' + $(deleteForm.manufacturerId).val());
+    //populate the textbox
+    console.log(manufacturerName);
 });

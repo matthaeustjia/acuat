@@ -28,3 +28,9 @@ Route::get('item/search', 'ItemController@search');
 
 //Invoice Masuk Contoller
 Route::get('/invoicemasuk', 'InvoiceMasukController@index');
+
+//Manufacturer
+Route::get('/manufacturer', 'ManufacturerController@index');
+Route::post('/manufacturer', 'ManufacturerController@store');
+Route::delete('/manufacturer/{manufacturer}', 'ManufacturerController@destroy');
+Route::get('/manufacturer/search', 'ManufacturerController@search');

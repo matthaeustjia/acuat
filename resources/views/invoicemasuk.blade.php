@@ -4,12 +4,7 @@
 @section('tablehead')
     <tr>
         <th>Invoice ID</th>
-        <th>Invoice Name</th>
-        <th>Stock</th>
-        <th>List</th>
-        <th>List</th>
-        <th>List</th>
-        <th>List</th>
+        <th>Manufakturer ID</th>
     </tr>
 @endsection
 

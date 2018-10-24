@@ -31,23 +31,14 @@
 @endsection
 
 @section('DeleteModalContent')
-        <form id="deleteForm" action="/item/" method="POST">
-            @csrf
-            @method('DELETE')
             <div class="modal-body">    
                 <p>Are you sure you wanna delete?
                 <input class="border-0" type="text" id="itemId" name="itemId" readonly> 
                 </p>     
             </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </div>
-        </form>      
 @endsection
 
 @section('AddModalContent')
-        <form action="/item" method="POST">
-            @csrf
             <div class="modal-body">    
                 <div class="form-group">
                     <label for="id">ID Produk</label>
@@ -61,10 +52,5 @@
                     <label for="id">Deskripsi</label>
                     <textarea class="form-control"id="description" name="description"></textarea>
                 </div>      
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary">Add</button>
-                <button type="reset" class="btn btn-warning">Reset</button>
-            </div>
-        </form>      
+            </div>   
 @endsection

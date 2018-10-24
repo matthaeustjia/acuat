@@ -8,7 +8,14 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      @yield('AddModalContent')
+      <form action="/@yield('currentpage')/" method="POST">
+        @csrf
+        @yield('AddModalContent')
+          <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="reset" class="btn btn-warning">Reset</button>
+          </div>
+      </form>   
     </div>
   </div>
 </div>
@@ -23,7 +30,14 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      @yield('DeleteModalContent')
+        <form id="deleteForm" action="/@yield('currentpage')/" method="POST">
+          @csrf
+          @method('DELETE')
+          @yield('DeleteModalContent')
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </div>
+        </form>      
     </div>
   </div>
 </div>

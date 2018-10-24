@@ -19,7 +19,9 @@
         <th>{{$item->description}}</th>    
         <th>{{$item->created_at}}</th>    
         <th>
-        <button type="button" class="btn-sm btn-warning" data-item-name="{{$item->name}}"data-item-id="{{$item->id}}" data-toggle="modal" data-target="#ItemEditModal" ><i class="far fa-edit"></i></button>
+        <button type="button" class="btn-sm btn-warning" 
+        data-item-name="{{$item->name}}" data-item-id="{{$item->id}}" data-item-description="{{$item->description}}"
+        data-toggle="modal" data-target="#ItemEditModal" ><i class="far fa-edit"></i></button>
             <button type="button" class="btn-sm btn-danger" data-item-id="{{$item->id}}" data-toggle="modal" data-target="#ItemDeleteModal"><i class="far fa-trash-alt"></i></button>
         </th>
     </tr>
@@ -50,7 +52,7 @@
         </div>
         <div class="form-group">
             <label for="id">Deskripsi</label>
-            <textarea class="form-control"id="description" name="description"></textarea>
+            <textarea class="form-control" id="description" name="description"></textarea>
         </div>      
     </div>  
 @endsection

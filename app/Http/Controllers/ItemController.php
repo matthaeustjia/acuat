@@ -36,17 +36,18 @@ class ItemController extends Controller
     {
         //
         $validate = $request->validate([
-           'id' => 'required|unique:items',
-           'name'=> 'required'
+            'id' => 'required|unique:items',
+            'name'=> 'required',
+            'description' => 'required'
         ]);
 
-        $item = new Item;
-        $item->id = request('id');
-        $item->name = request('name');
-        $item->description = request('description');
-        $item->save();
+        Item::create([
+            'id' => request('id'),
+            'name' => request('name'),
+            'description' => request('description')
+        ]);
 
-        return redirect()->action('ItemController@index')->withSuccess($item->id.' Berhasil ditambahkan');
+        return redirect()->action('ItemController@index')->withSuccess($request->id.' Berhasil ditambahkan');
     }
 
     /**
@@ -76,6 +77,16 @@ class ItemController extends Controller
     public function update(Request $request, Item $item)
     {
         //
+        $validate = $request->validate([
+            'id' => 'required',
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+        
+        $item->name = request('name');
+        $item->description = request('description');
+        $item->save();
+        
         return redirect()->action('ItemController@index')->withSuccess($item->id . ' Berhasil diedit');
     }
 

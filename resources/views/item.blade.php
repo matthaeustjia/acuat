@@ -1,5 +1,5 @@
 @extends('layouts.table')
-@section('currentpage', 'Item')
+@section('currentpage', 'item')
 
 @section('tablehead')
     <tr>

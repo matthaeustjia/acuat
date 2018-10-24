@@ -5,7 +5,10 @@
     <div class="card">
         <div class="card-header d-flex justify-content-between">
             <h4>@yield('currentpage')</h4> 
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#@yield('currentpage')AddModal"><i class="fas fa-plus"></i></button>
+            <form class="form-inline" method="GET" action="/@yield('currentpage')/search">
+                <input id="search" name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+            <button type="button" class="btn-sm btn-primary" data-toggle="modal" data-target="#@yield('currentpage')AddModal"><i class="fas fa-plus"></i></button>
         </div>
         <div class="card-body">
             @if(session('success'))

@@ -17,5 +17,13 @@ Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/item', 'ItemController');
-Route::resource('/invoicemasuk', 'InvoiceMasukController');
+
+//Item Controller
+Route::get('/item', 'ItemController@index');
+Route::post('/item', 'ItemController@store');
+Route::delete('/item/{item}', 'ItemController@destroy');
+Route::get('item/search', 'ItemController@search');
+
+
+//Invoice Masuk Contoller
+Route::get('/invoicemasuk', 'InvoiceMasukController@index');

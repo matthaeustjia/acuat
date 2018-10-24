@@ -35940,7 +35940,7 @@ module.exports = function spread(callback) {
 /* 36 */
 /***/ (function(module, exports) {
 
-$('#ItemDeleteModal').on('show.bs.modal', function (e) {
+$('#itemDeleteModal').on('show.bs.modal', function (e) {
 
     var itemId = $(e.relatedTarget).data('item-id');
     $(e.currentTarget).find('input[name="itemId"]').val(itemId);

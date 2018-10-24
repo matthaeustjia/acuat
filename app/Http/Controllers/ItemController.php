@@ -16,21 +16,14 @@ class ItemController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
-        $items = Item::paginate(5);
-        return view('item', compact('items'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $items = Item::paginate(10);
+        if (!$items->isEmpty()) {
+            return view('item', compact('items'));
+        }
+        return view('item', compact('items'))->withErrors('Data Tidak ditemukan');
     }
 
     /**
@@ -62,9 +55,15 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function show(Item $item)
+    public function search(Request $request)
     {
         //
+        $value = $request->input('search');
+        $items = Item::Search($value)->paginate(10)->appends(request()->except('page'));
+        if (!$items->isEmpty()) {
+            return view('item', compact('items'));
+        }
+        return view('item', compact('items'))->withErrors('Data Tidak ditemukan');
     }
 
     /**

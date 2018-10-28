@@ -38,7 +38,7 @@
                                 <a class="nav-link {{ request()->is('manufacturer') ? 'active' : '' }}" href="/manufacturer">Supplier</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ request()->is('item') ? 'active' : '' }}" href="/item">Items</a>
+                                <a class="nav-link {{ request()->is('customer') ? 'active' : '' }}" href="/customer">Customers</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->is('invoicemasuk') ? 'active' : '' }}" href="/invoicemasuk">Invoice Masuk</a>

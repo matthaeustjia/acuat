@@ -35982,6 +35982,28 @@ $('#manufacturerEditModal').on('show.bs.modal', function (e) {
     $(editForm).get(0).setAttribute('action', '/manufacturer/' + $(editForm.id).val());
 });
 
+//Customer Modal
+//Delete Modal
+$('#customerDeleteModal').on('show.bs.modal', function (e) {
+    var customerId = $(e.relatedTarget).data('customer-id');
+    var customerName = $(e.relatedTarget).data('customer-name');
+    $(e.currentTarget).find('input[name="customerId"]').val(customerId);
+    $(e.currentTarget).find('input[name="customerName"]').val(customerName);
+    $(deleteForm).get(0).setAttribute('action', '/customer/' + $(deleteForm.customerId).val());
+});
+
+$('#customerEditModal').on('show.bs.modal', function (e) {
+    var customerId = $(e.relatedTarget).data('customer-id');
+    var customerName = $(e.relatedTarget).data('customer-name');
+    var customerPhone = $(e.relatedTarget).data('customer-phone');
+    var customerEmail = $(e.relatedTarget).data('customer-email');
+    $(e.currentTarget).find('input[name="id"]').val(customerId);
+    $(e.currentTarget).find('input[name="name"]').val(customerName);
+    $(e.currentTarget).find('input[name="phone"]').val(customerPhone);
+    $(e.currentTarget).find('input[name="email"]').val(customerEmail);
+    $(editForm).get(0).setAttribute('action', '/customer/' + $(editForm.id).val());
+});
+
 /***/ }),
 /* 37 */
 /***/ (function(module, exports) {

@@ -16,7 +16,7 @@ class CreateItemKeluarsTable extends Migration
         Schema::create('item_keluars', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('invoiceKeluar_id')->unsigned();
-            $table->integer('item_id')->unsigned();
+            $table->string('item_id');
             $table->integer('quantity');
             $table->integer('price');
             $table->foreign('invoiceKeluar_id')->references('id')->on('invoice_keluars');

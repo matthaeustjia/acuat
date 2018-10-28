@@ -13,4 +13,9 @@ class Item extends Model
     {
         return $query->where('id', 'LIKE', '%' . $item . '%');
     }
+
+    public function itemmasuk()
+    {
+        return $this->hasOne('App\ItemMasuk');
+    }
 }

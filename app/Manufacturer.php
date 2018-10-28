@@ -13,4 +13,9 @@ class Manufacturer extends Model
     {
         return $query->where('name', 'LIKE', '%'.$value.'%');
     }
+
+    public function invoicemasuks()
+    {
+        return $this->hasMany('App\InvoiceMasuk');
+    }
 }

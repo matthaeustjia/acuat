@@ -21,8 +21,8 @@
         <th>
         <button type="button" class="btn-sm btn-warning" 
         data-item-name="{{$item->name}}" data-item-id="{{$item->id}}" data-item-description="{{$item->description}}"
-        data-toggle="modal" data-target="#ItemEditModal" ><i class="far fa-edit"></i></button>
-            <button type="button" class="btn-sm btn-danger" data-item-id="{{$item->id}}" data-toggle="modal" data-target="#ItemDeleteModal"><i class="far fa-trash-alt"></i></button>
+        data-toggle="modal" data-target="#ItemEditModal" ><i class="far fa-edit fa-fw"></i></button>
+            <button type="button" class="btn-sm btn-danger" data-item-id="{{$item->id}}" data-toggle="modal" data-target="#ItemDeleteModal"><i class="far fa-trash-alt fa-fw"></i></button>
         </th>
     </tr>
     @endforeach

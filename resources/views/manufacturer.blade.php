@@ -24,9 +24,9 @@
             data-manufacturer-id="{{$manufacturer->id}}" 
             data-manufacturer-phone="{{$manufacturer->phone}}"
             data-manufacturer-email="{{$manufacturer->email}}"
-            data-toggle="modal" data-target="#manufacturerEditModal" ><i class="far fa-edit"></i>
+            data-toggle="modal" data-target="#manufacturerEditModal" ><i class="far fa-edit fa-fw"></i>
         </button>
-        <button type="button" class="btn-sm btn-danger" data-manufacturer-name="{{$manufacturer->name}}" data-manufacturer-id="{{$manufacturer->id}}" data-toggle="modal" data-target="#manufacturerDeleteModal"><i class="far fa-trash-alt"></i></button>
+        <button type="button" class="btn-sm btn-danger" data-manufacturer-name="{{$manufacturer->name}}" data-manufacturer-id="{{$manufacturer->id}}" data-toggle="modal" data-target="#manufacturerDeleteModal"><i class="far fa-trash-alt fa-fw"></i></button>
         </th>
     </tr>
     @endforeach
@@ -46,15 +46,18 @@
 @endsection
 
 @section('EditModalContent')
-    <div class="modal-body">    
-            <input type="text" class="form-control" id="id" name="id" hidden>    
+    <div class="modal-body"> 
         <div class="form-group">
-            <label for="id">Nama Supplier</label>
+            <label for="id">ID</label>   
+            <input type="text" class="form-control" id="id" name="id" readonly>   
+        </div> 
+        <div class="form-group">
+            <label for="name">Nama Supplier</label>
             <input type="text" class="form-control" id="name" name="name" required>    
         </div>
         <div class="form-group">
             <label for="id">Telepon Supplier</label>
-            <input type="text" class="form-control" id="phone" name="phone" required>
+            <input type="number" class="form-control" id="phone" name="phone" required>
         </div>
         <div class="form-group">
             <label for="id">Email Supplier</label>
@@ -71,7 +74,7 @@
         </div>
         <div class="form-group">
             <label for="id">Telepon Supplier</label>
-            <input type="text" class="form-control" id="phone" name="phone" required>
+            <input type="number" class="form-control" id="phone" name="phone" required>
         </div>
         <div class="form-group">
             <label for="id">Email Supplier</label>

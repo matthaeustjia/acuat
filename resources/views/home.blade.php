@@ -4,10 +4,10 @@
 <div class="container">
     <div class="card">
     <div class="card-header">
-        ANJING
+        ACUA
     </div>
     <div class="card-body">
-        GOBLOK X NI ORG
+        HOME
     </div>
 </div>
 @endsection

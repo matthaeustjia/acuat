@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\InvoiceMasuk;
 use Illuminate\Http\Request;
+use App\Manufacturer;
 
 class InvoiceMasukController extends Controller
 {
@@ -20,18 +22,11 @@ class InvoiceMasukController extends Controller
     public function index()
     {
         //
-        return view('invoicemasuk');
+        $manufacturers = Manufacturer::get();
+        $invoicemasuks = InvoiceMasuk::with('manufacturer')->paginate(10);
+        return view('invoicemasuk', compact('manufacturers'), compact('invoicemasuks'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -42,6 +37,15 @@ class InvoiceMasukController extends Controller
     public function store(Request $request)
     {
         //
+        $validate = $request->validate([
+            'manufacturer_id' => 'required'
+        ]);
+    
+        InvoiceMasuk::create([
+            'manufacturer_id' => request('manufacturer_id')
+        ]);
+
+        return redirect()->action('InvoiceMasukController@index')->withSuccess('Sukses menambah invoice masuk');
     }
 
     /**
@@ -52,7 +56,9 @@ class InvoiceMasukController extends Controller
      */
     public function show($id)
     {
-        //
+        $manufacturers = Manufacturer::get();
+        $invoicemasuks = InvoiceMasuk::where('id', $id)->with('manufacturer')->paginate(10);
+        return view('invoicemasuk', compact('manufacturers'), compact('invoicemasuks'));
     }
 
     /**

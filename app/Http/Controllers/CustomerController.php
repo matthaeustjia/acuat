@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +19,8 @@ class CustomerController extends Controller
     public function index()
     {
         //
+        $customers = Customer::paginate(10);
+        return view('customer', compact('customers'));
     }
 
     /**
@@ -36,6 +42,19 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         //
+        $validate = $request->validate([
+           'name' => 'required',
+           'phone' => 'required',
+           'email' => 'required'
+        ]);
+
+        Customer::create([
+            'name' => request('name'),
+            'phone' => request('phone'),
+            'email' => request('email')
+        ]);
+
+        return redirect()->action('CustomerController@index')->withSuccess($request->name.' Berhasil ditambahkan');
     }
 
     /**
@@ -50,17 +69,6 @@ class CustomerController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Customer  $customer
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Customer $customer)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -70,6 +78,19 @@ class CustomerController extends Controller
     public function update(Request $request, Customer $customer)
     {
         //
+        $validate = $request->validate([
+           'id' => 'required',
+           'name' => 'required',
+           'phone' => 'required',
+           'email' => 'required'
+        ]);
+        
+        $customer->name = request('name');
+        $customer->phone = request('phone');
+        $customer->email = request('email');
+        $customer->save();
+
+        return redirect()->action('CustomerController@index')->withSuccess($customer->name. ' Berhasil diedit');
     }
 
     /**
@@ -81,5 +102,18 @@ class CustomerController extends Controller
     public function destroy(Customer $customer)
     {
         //
+        $customer->delete();
+        return redirect()->action('CustomerController@index')->withSuccess('Mendelete Customer ' .$customer->name. ' success');
+    }
+
+    public function search(Request $request)
+    {
+        $value = $request->input('search');
+        $customers = Customer::search($value)->paginate(10)->appends(request()->except('page'));
+        if (!$customers->isEmpty()) {
+            return view('customer', compact('customers'));
+        }
+
+        return view('customer', compact('customers'))->withErrors('Data tidak ditemukan');
     }
 }

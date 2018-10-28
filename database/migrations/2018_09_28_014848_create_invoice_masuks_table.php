@@ -28,6 +28,7 @@ class CreateInvoiceMasuksTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('manufacturers');
         Schema::dropIfExists('invoice_masuks');
     }
 }

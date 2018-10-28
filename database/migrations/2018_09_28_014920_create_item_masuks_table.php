@@ -16,7 +16,7 @@ class CreateItemMasuksTable extends Migration
         Schema::create('item_masuks', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('invoiceMasuk_id')->unsigned();
-            $table->integer('item_id')->unsigned();
+            $table->string('item_id');
             $table->integer('quantity');
             $table->integer('price');
             $table->timestamps();

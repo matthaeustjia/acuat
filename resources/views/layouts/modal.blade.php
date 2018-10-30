@@ -8,7 +8,12 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="/@yield('currentpage')/" method="POST">
+        @if(Request::is('itemmasuk/*'))
+          <form action="/{{Request::path()}}" method="POST">
+        @else
+          <form action="/@yield('currentpage')/" method="POST">
+        @endif
+        
         @csrf
         @yield('AddModalContent')
           <div class="modal-footer d-flex justify-content-center">

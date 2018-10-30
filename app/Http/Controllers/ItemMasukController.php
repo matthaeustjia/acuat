@@ -18,6 +18,24 @@ class ItemMasukController extends Controller
         $itemmasuks = ItemMasuk::where('invoiceMasuk_id', $id)->paginate(10);
         return view('itemmasuk', compact('itemmasuks'));
     }
+
+    public function store($id, Request $request)
+    {
+        $validate = $request->validate([
+            'id' => 'required',
+            'quantity' => 'required',
+            'price' => 'required'
+        ]);
+
+        ItemMasuk::create([
+            'invoiceMasuk_id' => $id,
+            'item_id' => request('id'),
+            'quantity' => request('quantity'),
+            'price' => request('price')
+        ]);
+
+        return redirect()->action('ItemMasukController@show', $id)->withSuccess('Success Menambah Item');
+    }
     // public function index()
     // {
     //     $itemmasuks = ItemMasuk::paginate(10);

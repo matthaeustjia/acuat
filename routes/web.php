@@ -48,3 +48,4 @@ Route::get('/customer/search', 'CustomerController@search');
 //Item Masuk Controller
 //Route::get('/itemmasuk', 'ItemMasukController@index');
 Route::get('/itemmasuk/{id}', 'ItemMasukController@show');
+Route::post('/itemmasuk/{id}', 'ItemMasukController@store');

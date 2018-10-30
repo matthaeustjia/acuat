@@ -54,20 +54,20 @@
 @section('EditModalContent')
     <div class="modal-body">  
         <div class="form-group">
-            <label for="id">ID</label>
+            <label for="id">Item ID</label>
             <input type="text" class="form-control" id="id" name="id" readonly>
         </div>  
         <div class="form-group">
-            <label for="name">Nama Customer</label>
+            <label for="name">Nama Item</label>
             <input type="text" class="form-control" id="name" name="name" required>
         </div>
         <div class="form-group">
-            <label for="id">Phone</label>
-            <input type="number" class="form-control" id="phone" name="phone" required>    
+            <label for="id">Quantity</label>
+            <input type="number" class="form-control" id="quantity" name="quantity" required>    
         </div>
         <div class="form-group">
-            <label for="id">Email</label>
-            <input type="email" class="form-control" id="email" name="email" required>    
+            <label for="id">Harga</label>
+            <input type="number" class="form-control" id="price" name="price" required>    
         </div>           
     </div>  
 @endsection
@@ -75,16 +75,20 @@
 @section('AddModalContent')
     <div class="modal-body">    
         <div class="form-group">
-            <label for="id">Nama Customer</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+            <label for="id">Item ID</label>
+            <input type="text" class="form-control" id="id" name="id" required>
+        </div>  
+        <div class="form-group">
+            <label for="name">Nama Item</label>
+            <input type="text" class="form-control" id="name" name="name" readonly>
         </div>
         <div class="form-group">
-            <label for="id">Phone</label>
-            <input type="number" class="form-control" id="phone" name="phone" required>    
+            <label for="id">Quantity</label>
+            <input type="number" class="form-control" id="quantity" name="quantity" required>    
         </div>
         <div class="form-group">
-            <label for="id">Email</label>
-            <input type="email" class="form-control" id="email" name="email" required>    
-        </div>      
+            <label for="id">Harga</label>
+            <input type="number" class="form-control" id="price" name="price" required>    
+        </div>           
     </div>   
 @endsection

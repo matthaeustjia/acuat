@@ -3,6 +3,7 @@
 
 @section('tablehead')
     <tr>
+        <th></th>
         <th>ID</th>
         <th>Nama Supplier</th>
         <th>Telepon</th>

@@ -30,7 +30,7 @@ Route::get('/item/search', 'ItemController@search');
 Route::get('/invoicemasuk', 'InvoiceMasukController@index');
 Route::get('/invoicemasuk/{invoicemasuk}', 'InvoiceMasukController@show');
 Route::post('/invoicemasuk', 'InvoiceMasukController@store');
-
+Route::delete('/invoicemasuk/{invoicemasuk}', 'InvoiceMasukController@destroy');
 //Manufacturer
 Route::get('/manufacturer', 'ManufacturerController@index');
 Route::post('/manufacturer', 'ManufacturerController@store');
@@ -46,5 +46,5 @@ Route::patch('/customer/{customer}', 'CustomerController@update');
 Route::get('/customer/search', 'CustomerController@search');
 
 //Item Masuk Controller
-Route::get('/itemmasuk', 'ItemMasukController@index');
-Route::get('/itemmasuk/{invoiceId}', 'ItemMasukController@show');
+//Route::get('/itemmasuk', 'ItemMasukController@index');
+Route::get('/itemmasuk/{id}', 'ItemMasukController@show');

@@ -36004,6 +36004,13 @@ $('#customerEditModal').on('show.bs.modal', function (e) {
     $(editForm).get(0).setAttribute('action', '/customer/' + $(editForm.id).val());
 });
 
+//InvoiceMasukModal
+$('#invoicemasukDeleteModal').on('show.bs.modal', function (e) {
+    var invoicemasukId = $(e.relatedTarget).data('invoicemasuk-id');
+    $(e.currentTarget).find('input[name="invoicemasukId"]').val(invoicemasukId);
+    $(deleteForm).get(0).setAttribute('action', '/invoicemasuk/' + $(deleteForm.invoicemasukId).val());
+});
+
 /***/ }),
 /* 37 */
 /***/ (function(module, exports) {

@@ -19,7 +19,6 @@
         <th>{{$invoicemasuk->manufacturer->name}}</th>    
         <th>{{$invoicemasuk->manufacturer->phone}}</th>    
         <th>{{$invoicemasuk->manufacturer->email}}</th>
-        <th></th>
         <th>
         <a href="/itemmasuk/{{$invoicemasuk->id}}"><i class="btn-sm btn-primary fa fa-list"></i></a>
         <button type="button" class="btn-sm btn-warning" 
@@ -30,7 +29,6 @@
             data-toggle="modal" data-target="#invoicemasukEditModal" ><i class="far fa-edit fa-fw"></i>
         </button>
         <button type="button" class="btn-sm btn-danger"
-            data-invoicemasuk-name="{{$invoicemasuk->name}}" 
             data-invoicemasuk-id="{{$invoicemasuk->id}}" 
             data-toggle="modal" data-target="#invoicemasukDeleteModal">
             <i class="far fa-trash-alt fa-fw"></i>
@@ -47,8 +45,7 @@
 @section('DeleteModalContent')
     <div class="modal-body">    
         <p>Are you sure you wanna delete?
-            <input class="border-0" type="text" id="invoicemasukName" name="invoicemasukName" readonly> 
-            <input class="border-0" type="text" id="invoicemasukId" name="invoicemasukId" hidden> 
+            <input class="border-0" type="text" id="invoicemasukId" name="invoicemasukId" readonly> 
         </p>     
     </div>
 @endsection

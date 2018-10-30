@@ -8,7 +8,8 @@ class InvoiceMasuk extends Model
 {
     //
     protected $fillable = ['manufacturer_id'];
-    
+
+
     public function manufacturer()
     {
         return $this->belongsTo('App\Manufacturer');
@@ -16,6 +17,6 @@ class InvoiceMasuk extends Model
 
     public function itemmasuk()
     {
-        return $this->hasMany('App\InvoiceMasuk');
+        return $this->hasMany('App\ItemMasuk');
     }
 }

@@ -23,7 +23,7 @@ class InvoiceMasukController extends Controller
     {
         //
         $manufacturers = Manufacturer::get();
-        $invoicemasuks = InvoiceMasuk::with('manufacturer')->paginate(10);
+        $invoicemasuks = InvoiceMasuk::paginate(10);
         return view('invoicemasuk', compact('manufacturers'), compact('invoicemasuks'));
     }
 
@@ -57,7 +57,7 @@ class InvoiceMasukController extends Controller
     public function show($id)
     {
         $manufacturers = Manufacturer::get();
-        $invoicemasuks = InvoiceMasuk::where('id', $id)->with('manufacturer')->paginate(10);
+        $invoicemasuks = InvoiceMasuk::where('id', $id)->paginate(10);
         return view('invoicemasuk', compact('manufacturers'), compact('invoicemasuks'));
     }
 
@@ -90,8 +90,10 @@ class InvoiceMasukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(InvoiceMasuk $invoicemasuk)
     {
         //
+        $invoicemasuk->delete();
+        return redirect()->action('InvoiceMasukController@index')->withSuccess('Sukses Mendelete Invoice');
     }
 }

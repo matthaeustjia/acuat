@@ -13,14 +13,14 @@ class ItemMasukController extends Controller
         $this->middleware('auth');
     }
 
-    public function show($invoicemasuk)
+    public function show($id)
     {
-        $itemmasuks = ItemMasuk::where('invoiceMasuk_id', $invoicemasuk)->paginate(10);
+        $itemmasuks = ItemMasuk::where('invoiceMasuk_id', $id)->paginate(10);
         return view('itemmasuk', compact('itemmasuks'));
     }
-    public function index()
-    {
-        $itemmasuks = ItemMasuk::with('invoicemasuk', 'item')->paginate(10);
-        return view('itemmasuk', compact('itemmasuks'));
-    }
+    // public function index()
+    // {
+    //     $itemmasuks = ItemMasuk::paginate(10);
+    //     return view('itemmasuk', compact('itemmasuks'));
+    // }
 }

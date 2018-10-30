@@ -4,7 +4,9 @@
 @section('tablehead')
     <tr>
         <div class="d-flex justify-content-between">
-            <a href="/invoicemasuk/{{$itemmasuks[0]->invoiceMasuk_id}}"><h5>Invoice ID - {{$itemmasuks[0]->invoiceMasuk_id}}</h5></a>
+            @if(!$itemmasuks->isEmpty())
+                <a href="/invoicemasuk/{{$itemmasuks[0]->invoiceMasuk_id}}"><h5>Invoice ID - {{$itemmasuks[0]->invoiceMasuk_id}}</h5></a>
+            @endif
         </div>
         <th>Item ID</th>
         <th>Item Name</th>

@@ -63,3 +63,11 @@ $('#customerEditModal').on('show.bs.modal', function (e) {
     $(e.currentTarget).find('input[name="email"]').val(customerEmail);
     $(editForm).get(0).setAttribute('action', '/customer/' + $(editForm.id).val());
 });
+
+//InvoiceMasukModal
+$('#invoicemasukDeleteModal').on('show.bs.modal', function (e) {
+    var invoicemasukId = $(e.relatedTarget).data('invoicemasuk-id');
+    $(e.currentTarget).find('input[name="invoicemasukId"]').val(invoicemasukId);
+    $(deleteForm).get(0).setAttribute('action', '/invoicemasuk/' + $(deleteForm.invoicemasukId).val());
+
+});

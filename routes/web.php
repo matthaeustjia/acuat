@@ -31,6 +31,8 @@ Route::get('/invoicemasuk', 'InvoiceMasukController@index');
 Route::get('/invoicemasuk/{invoicemasuk}', 'InvoiceMasukController@show');
 Route::post('/invoicemasuk', 'InvoiceMasukController@store');
 Route::delete('/invoicemasuk/{invoicemasuk}', 'InvoiceMasukController@destroy');
+Route::patch('/invoicemasuk/{invoicemasuk}', 'InvoiceMasukController@update');
+
 //Manufacturer
 Route::get('/manufacturer', 'ManufacturerController@index');
 Route::post('/manufacturer', 'ManufacturerController@store');

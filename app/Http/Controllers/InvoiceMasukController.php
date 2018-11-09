@@ -35,6 +35,8 @@ class InvoiceMasukController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+     
     public function store(Request $request)
     {
         //
@@ -80,9 +82,15 @@ class InvoiceMasukController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, InvoiceMasuk $invoicemasuk)
     {
-        //
+        $validate = $request->validate([
+            'manufacturer_id' => 'required'
+       ]);
+
+        $invoicemasuk->manufacturer_id = request('manufacturer_id');
+        $invoicemasuk->save();
+        return redirect()->action('InvoiceMasukController@index')->withSuccess('Sukses mengedit invoice masuk');
     }
 
     /**

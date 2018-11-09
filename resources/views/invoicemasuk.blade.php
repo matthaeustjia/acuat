@@ -24,9 +24,6 @@
         <a href="/itemmasuk/{{$invoicemasuk->id}}"><i class="btn-sm btn-primary fa fa-list"></i></a>
         <button type="button" class="btn-sm btn-warning" 
             data-invoicemasuk-id="{{$invoicemasuk->id}}" 
-            data-invoicemasuk-name="{{$invoicemasuk->name}}" 
-            data-invoicemasuk-phone="{{$invoicemasuk->phone}}"
-            data-invoicemasuk-email="{{$invoicemasuk->email}}"
             data-toggle="modal" data-target="#invoicemasukEditModal" ><i class="far fa-edit fa-fw"></i>
         </button>
         <button type="button" class="btn-sm btn-danger"
@@ -54,21 +51,13 @@
 @section('EditModalContent')
     <div class="modal-body">  
         <div class="form-group">
-            <label for="id">ID</label>
-            <input type="text" class="form-control" id="id" name="id" readonly>
-        </div>  
-        <div class="form-group">
-            <label for="name">Nama Customer</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+            <label for="manufacturer_id">Supplier</label>
+            <select class="form-control" name="manufacturer_id" id="manufacturer_id">
+                @foreach($manufacturers as $manufacturer)
+                <option value="{{$manufacturer->id}}">{{$manufacturer->name}}</option>
+                @endforeach  
+            </select>    
         </div>
-        <div class="form-group">
-            <label for="id">Phone</label>
-            <input type="number" class="form-control" id="phone" name="phone" required>    
-        </div>
-        <div class="form-group">
-            <label for="id">Email</label>
-            <input type="email" class="form-control" id="email" name="email" required>    
-        </div>           
     </div>  
 @endsection
 

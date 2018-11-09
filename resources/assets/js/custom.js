@@ -65,12 +65,20 @@ $('#customerEditModal').on('show.bs.modal', function (e) {
 });
 
 //InvoiceMasukModal
+//Delete Modal
 $('#invoicemasukDeleteModal').on('show.bs.modal', function (e) {
     var invoicemasukId = $(e.relatedTarget).data('invoicemasuk-id');
     $(e.currentTarget).find('input[name="invoicemasukId"]').val(invoicemasukId);
     $(deleteForm).get(0).setAttribute('action', '/invoicemasuk/' + $(deleteForm.invoicemasukId).val());
 
 });
+
+//EditModal
+$('#invoicemasukEditModal').on('show.bs.modal', function (e) {
+    var invoicemasukId = $(e.relatedTarget).data('invoicemasuk-id');
+    $(editForm).get(0).setAttribute('action', '/invoicemasuk/' + invoicemasukId);
+});
+
 
 //ItemMasukModal
 //Delete Modal

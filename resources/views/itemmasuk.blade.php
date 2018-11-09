@@ -8,7 +8,6 @@
                 <a href="/invoicemasuk/{{$itemmasuks[0]->invoiceMasuk_id}}"><h5>Invoice ID - {{$itemmasuks[0]->invoiceMasuk_id}}</h5></a>
             @endif
         </div>
-        <th>ID</th>
         <th>Item ID</th>
         <th>Item Name</th>
         <th>Quantity</th>
@@ -21,7 +20,6 @@
 @section('tablebody')
     @foreach($itemmasuks as $itemmasuk)
     <tr>
-        <th>{{$itemmasuk->id}}</th>
         <th>{{$itemmasuk->item->id}}</th>    
         <th>{{$itemmasuk->item->name}}</th>  
         <th>{{$itemmasuk->quantity}}</th>  
@@ -47,8 +45,8 @@
 
 @section('DeleteModalContent')
     <div class="modal-body">    
-        <p>Are you sure you wanna delete?
-            <input class="border-0" type="text" id="itemmasukId" name="itemmasukId" readonly> 
+        <p>Are you sure you wanna delete Item masuk?
+            <input class="border-0" type="text" id="itemmasukId" name="itemmasukId" hidden> 
         </p>     
     </div>
 @endsection

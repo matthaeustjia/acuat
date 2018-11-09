@@ -43,6 +43,9 @@
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->is('invoicemasuk') ? 'active' : '' }}" href="/invoicemasuk">Invoice Masuk</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->is('invoicekeluar') ? 'active' : '' }}" href="/invoicekeluar">Invoice Keluar</a>
+                            </li>
                             
                         </ul>
                         <ul class="nav navbar-nav">

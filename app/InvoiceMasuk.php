@@ -17,6 +17,13 @@ class InvoiceMasuk extends Model
 
     public function itemmasuk()
     {
-        return $this->hasMany('App\ItemMasuk');
+        return $this->hasMany('App\ItemMasuk', 'id', 'invoiceMasuk_id');
+    }
+
+    public function getTotal()
+    {
+        return $this->itemmasuk->sum(function ($itemmasuk) {
+            return $itemmasuk->quantity * $itemmasuk->price;
+        });
     }
 }

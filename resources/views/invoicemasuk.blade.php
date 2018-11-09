@@ -3,7 +3,6 @@
 
 @section('tablehead')
     <tr>
-        <th></th>
         <th>ID</th>
         <th>Nama Supplier</th>
         <th>Telepon</th>
@@ -20,6 +19,7 @@
         <th>{{$invoicemasuk->manufacturer->name}}</th>    
         <th>{{$invoicemasuk->manufacturer->phone}}</th>    
         <th>{{$invoicemasuk->manufacturer->email}}</th>
+        <th>{{$invoicemasuk->itemmasuk}}</th>
         <th>
         <a href="/itemmasuk/{{$invoicemasuk->id}}"><i class="btn-sm btn-primary fa fa-list"></i></a>
         <button type="button" class="btn-sm btn-warning" 

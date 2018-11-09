@@ -49,3 +49,4 @@ Route::get('/customer/search', 'CustomerController@search');
 //Route::get('/itemmasuk', 'ItemMasukController@index');
 Route::get('/itemmasuk/{id}', 'ItemMasukController@show');
 Route::post('/itemmasuk/{id}', 'ItemMasukController@store');
+Route::delete('/itemmasuk/{itemmasuk}', 'ItemMasukController@destroy');

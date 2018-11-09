@@ -15,8 +15,15 @@ class ItemMasukController extends Controller
 
     public function show($id)
     {
-        $itemmasuks = ItemMasuk::where('invoiceMasuk_id', $id)->paginate(10);
+        $itemmasuks = ItemMasuk::with('item')->where('invoiceMasuk_id', $id)->paginate(10);
         return view('itemmasuk', compact('itemmasuks'));
+    }
+
+
+    public function destroy(ItemMasuk $itemmasuk)
+    {
+        $itemmasuk->delete();
+        return redirect()->back()->withSuccess('Mendelete Item Success');
     }
 
     public function store($id, Request $request)

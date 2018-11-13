@@ -14,8 +14,13 @@ class Item extends Model
         return $query->where('id', 'LIKE', '%' . $value . '%');
     }
 
-    public function itemmasuk()
+    public function itemmasuks()
     {
-        return $this->hasOne('App\ItemMasuk');
+        return $this->hasMany('App\ItemMasuk');
+    }
+
+    public function countStock()
+    {
+        return $this->itemmasuks->sum('quantity');
     }
 }

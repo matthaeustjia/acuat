@@ -17,7 +17,7 @@
         <th>{{$item->id}}</th>    
         <th>{{$item->name}}</th>    
         <th>{{$item->description}}</th>    
-        <th>{{$item->created_at}}</th>    
+        <th>{{$item->countStock()}}</th>    
         <th>
         <button type="button" class="btn-sm btn-warning" 
         data-item-name="{{$item->name}}" data-item-id="{{$item->id}}" data-item-description="{{$item->description}}"

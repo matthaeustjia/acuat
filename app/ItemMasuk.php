@@ -16,4 +16,8 @@ class ItemMasuk extends Model
     {
         return $this->belongsTo('App\Item');
     }
+    public function getTotal()
+    {
+        return $this->quantity*$this->price;
+    }
 }

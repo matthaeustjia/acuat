@@ -15,14 +15,14 @@ class InvoiceMasuk extends Model
         return $this->belongsTo('App\Manufacturer');
     }
 
-    public function itemmasuk()
+    public function itemmasuks()
     {
-        return $this->hasMany('App\ItemMasuk', 'id', 'invoiceMasuk_id');
+        return $this->hasMany('App\ItemMasuk', 'invoiceMasuk_id');
     }
-
+    
     public function getTotal()
     {
-        return $this->itemmasuk->sum(function ($itemmasuk) {
+        return $this->itemmasuks->sum(function ($itemmasuk) {
             return $itemmasuk->quantity * $itemmasuk->price;
         });
     }

@@ -23,8 +23,9 @@ class InvoiceMasukController extends Controller
     {
         //
         $manufacturers = Manufacturer::get();
-        $invoicemasuks = InvoiceMasuk::with('manufacturer')->paginate(10);
-        $totalprice = InvoiceMasuk::with('manufacturer')->paginate(10)->sum('price');
+        $invoicemasuks = InvoiceMasuk::with('manufacturer')
+        ->with('itemmasuks')
+        ->paginate(10);
         return view('invoicemasuk', compact('manufacturers'), compact('invoicemasuks'), compact('totalprice'));
     }
 

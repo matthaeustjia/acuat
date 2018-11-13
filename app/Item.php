@@ -11,7 +11,7 @@ class Item extends Model
     protected $fillable = ['id', 'name', 'description'];
     public function scopeSearch($query, $value)
     {
-        return $query->where('id', 'LIKE', '%' . $item . '%');
+        return $query->where('id', 'LIKE', '%' . $value . '%');
     }
 
     public function itemmasuk()

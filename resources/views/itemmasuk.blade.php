@@ -24,7 +24,7 @@
         <th>{{$itemmasuk->item->name}}</th>  
         <th>{{$itemmasuk->quantity}}</th>  
         <th>{{number_format($itemmasuk->price)}}</th>
-        <th>{{number_format($itemmasuk->price*$itemmasuk->quantity)}}</th>
+        <th>{{number_format($itemmasuk->getTotal())}}</th>
         <th>
         <button type="button" class="btn-sm btn-warning" 
             data-toggle="modal" data-target="#itemmasukEditModal" ><i class="far fa-edit fa-fw"></i>

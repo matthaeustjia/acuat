@@ -19,6 +19,7 @@
         <th>{{$manufacturer->phone}}</th>    
         <th>{{$manufacturer->email}}</th>    
         <th>
+        <a href="/invoicemasuk/manufacturer?manufacturer={{$manufacturer->id}}"><i class="btn-sm btn-primary fa fa-list"></i></a>
         <button type="button" class="btn-sm btn-warning" 
             data-manufacturer-name="{{$manufacturer->name}}" 
             data-manufacturer-id="{{$manufacturer->id}}" 

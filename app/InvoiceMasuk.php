@@ -10,6 +10,11 @@ class InvoiceMasuk extends Model
     protected $fillable = ['manufacturer_id'];
 
 
+    public function scopeSearchByManufacturer($query, $value)
+    {
+        return $query->where('manufacturer_id', $value);
+    }
+
     public function manufacturer()
     {
         return $this->belongsTo('App\Manufacturer');

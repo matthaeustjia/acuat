@@ -19,9 +19,19 @@ class InvoiceMasukController extends Controller
         $this->middleware('auth');
     }
     
+    public function manufacturer(Request $request)
+    {
+        $manufacturers = Manufacturer::get();
+        $value = request('manufacturer');
+        $invoicemasuks = InvoiceMasuk::SearchByManufacturer($value)->paginate(10)->appends(request()->except('page'));
+        if (!$invoicemasuks->isEmpty()) {
+            return view('invoicemasuk', compact('invoicemasuks'), compact('manufacturers'));
+        }
+    }
+
+
     public function index()
     {
-        //
         $manufacturers = Manufacturer::get();
         $invoicemasuks = InvoiceMasuk::with('manufacturer')
         ->with('itemmasuks')

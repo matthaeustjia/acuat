@@ -19,7 +19,7 @@ class ItemController extends Controller
 
     public function index()
     {
-        $items = Item::paginate(10);
+        $items = Item::with('itemmasuks')->paginate(10);
         return view('item', compact('items'));
     }
 

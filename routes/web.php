@@ -28,10 +28,11 @@ Route::get('/item/search', 'ItemController@search');
 
 //Invoice Masuk Contoller
 Route::get('/invoicemasuk', 'InvoiceMasukController@index');
-Route::get('/invoicemasuk/{invoicemasuk}', 'InvoiceMasukController@show');
 Route::post('/invoicemasuk', 'InvoiceMasukController@store');
 Route::delete('/invoicemasuk/{invoicemasuk}', 'InvoiceMasukController@destroy');
 Route::patch('/invoicemasuk/{invoicemasuk}', 'InvoiceMasukController@update');
+Route::get('/invoicemasuk/manufacturer', 'InvoiceMasukController@manufacturer');
+Route::get('/invoicemasuk/{invoicemasuk}', 'InvoiceMasukController@show');
 
 //Manufacturer
 Route::get('/manufacturer', 'ManufacturerController@index');

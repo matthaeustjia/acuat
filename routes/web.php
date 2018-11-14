@@ -24,6 +24,7 @@ Route::post('/item', 'ItemController@store');
 Route::delete('/item/{item}', 'ItemController@destroy');
 Route::patch('/item/{item}', 'ItemController@update');
 Route::get('/item/search', 'ItemController@search');
+Route::get('/api/item', 'ItemController@searchApi');
 
 
 //Invoice Masuk Contoller

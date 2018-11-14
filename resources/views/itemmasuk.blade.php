@@ -26,9 +26,6 @@
         <th>{{number_format($itemmasuk->price)}}</th>
         <th>{{number_format($itemmasuk->getTotal())}}</th>
         <th>
-        <button type="button" class="btn-sm btn-warning" 
-            data-toggle="modal" data-target="#itemmasukEditModal" ><i class="far fa-edit fa-fw"></i>
-        </button>
         <button type="button" class="btn-sm btn-danger"
             data-itemmasuk-id="{{$itemmasuk->id}}"
             data-toggle="modal" data-target="#itemmasukDeleteModal">
@@ -59,7 +56,7 @@
         </div>  
         <div class="form-group">
             <label for="name">Nama Item</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+            <input type="text" class="form-control" id="name" name="name" readonly>
         </div>
         <div class="form-group">
             <label for="id">Quantity</label>

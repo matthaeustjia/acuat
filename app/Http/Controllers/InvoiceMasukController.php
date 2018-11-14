@@ -27,6 +27,7 @@ class InvoiceMasukController extends Controller
         if (!$invoicemasuks->isEmpty()) {
             return view('invoicemasuk', compact('invoicemasuks'), compact('manufacturers'));
         }
+        return view('invoicemasuk', compact('invoicemasuks'), compact('manufacturers'))->withErrors('Data tidak dapat ditemukan');
     }
 
 

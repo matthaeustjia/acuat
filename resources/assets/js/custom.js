@@ -1,3 +1,10 @@
+//Axios to fetch data from the database
+
+function getItemData() {
+    axios.get('/item/')
+}
+
+
 //Item Modal
 //Delete Modal
 $('#itemDeleteModal').on('show.bs.modal', function (e) {

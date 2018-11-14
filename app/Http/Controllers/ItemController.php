@@ -53,6 +53,15 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
+
+    public function searchApi(Request $request)
+    {
+        $value = $request->input('search');
+        $items = Item::Search($value)->get();
+        return $items;
+    }
+
+    
     public function search(Request $request)
     {
         //

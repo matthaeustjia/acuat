@@ -8,6 +8,7 @@
         <th>Telepon</th>
         <th>Email</th>
         <th>Total</th>
+        <th>Date</th>
         <th></th>
     </tr>
 @endsection
@@ -20,6 +21,7 @@
         <th>{{$invoicemasuk->manufacturer->phone}}</th>    
         <th>{{$invoicemasuk->manufacturer->email}}</th>
         <th>{{number_format($invoicemasuk->getInvoiceTotal())}}</th>
+        <th>{{$invoicemasuk->created_at->format('d/m/Y')}}</th>
         <th>
         <a href="/itemmasuk/{{$invoicemasuk->id}}"><i class="btn-sm btn-primary fa fa-list"></i></a>
         <button type="button" class="btn-sm btn-warning" 

@@ -9,10 +9,11 @@ class Item extends Model
     //
     public $incrementing = false;
     protected $fillable = ['id', 'name', 'description'];
-    
+
     public function scopeSearch($query, $value)
     {
-        return $query->where('id', 'LIKE', '%' . $value . '%');
+        return $query->where('id', 'LIKE', '%' . $value . '%')->
+        orWhere('name', 'LIKE', '%' . $value . '%')->limit(10);
     }
 
     public function itemmasuks()

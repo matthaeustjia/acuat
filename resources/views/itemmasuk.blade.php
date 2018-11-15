@@ -48,37 +48,15 @@
     </div>
 @endsection
 
-@section('EditModalContent')
-    <div class="modal-body">  
-        <div class="form-group">
-            <label for="id">Item ID</label>
-            <input type="text" class="form-control" id="id" name="id" readonly>
-        </div>  
-        <div class="form-group">
-            <label for="name">Nama Item</label>
-            <input type="text" class="form-control" id="name" name="name" readonly>
-        </div>
-        <div class="form-group">
-            <label for="id">Quantity</label>
-            <input type="number" class="form-control" id="quantity" name="quantity" required>    
-        </div>
-        <div class="form-group">
-            <label for="id">Harga</label>
-            <input type="number" class="form-control" id="price" name="price" required>    
-        </div>           
-    </div>  
-@endsection
-
 @section('AddModalContent')
     <div class="modal-body">    
         <div class="form-group">
-            <label for="id">Item ID</label>
-            <input type="text" class="form-control" id="id" name="id" required>
-        </div>  
-        <div class="form-group">
-            <label for="name">Nama Item</label>
-            <input type="text" class="form-control" id="name" name="name" readonly>
-        </div>
+            <label for="item-id-data">Item ID</label>
+            <input type="text" id="item-id" class="form-control" placeholder="Search by ID or Name" autocomplete="off">
+         </div>  
+         <div class="form-group">
+            <select class="form-control" name="item-id-data" id="item-id-data"></select>
+         </div>
         <div class="form-group">
             <label for="id">Quantity</label>
             <input type="number" class="form-control" id="quantity" name="quantity" required>    

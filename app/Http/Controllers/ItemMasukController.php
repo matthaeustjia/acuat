@@ -29,14 +29,14 @@ class ItemMasukController extends Controller
     public function store($id, Request $request)
     {
         $validate = $request->validate([
-            'id' => 'required',
+            'item-id-data' => 'required',
             'quantity' => 'required',
             'price' => 'required'
         ]);
 
         ItemMasuk::create([
             'invoiceMasuk_id' => $id,
-            'item_id' => request('id'),
+            'item_id' => request('item-id-data'),
             'quantity' => request('quantity'),
             'price' => request('price')
         ]);

@@ -58,7 +58,7 @@ class ItemController extends Controller
     {
         $value = $request->input('search');
         $items = Item::Search($value)->get();
-        return $items;
+        return response()->json($items);
     }
 
     

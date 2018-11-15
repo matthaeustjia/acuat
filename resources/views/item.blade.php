@@ -61,7 +61,7 @@
     <div class="modal-body">    
         <div class="form-group">
             <label for="id">ID Produk</label>
-            <input type="text" class="form-control" id="id" name="id" required>    
+            <input type="text" class="form-control" id="id" name="id" autocomplete="off" required>    
         </div>
         <div class="form-group">
             <label for="id">Nama Produk</label>

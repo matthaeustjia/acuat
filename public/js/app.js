@@ -36032,6 +36032,33 @@ $('#itemmasukDeleteModal').on('show.bs.modal', function (e) {
     $(deleteForm).get(0).setAttribute('action', '/itemmasuk/' + $(deleteForm.itemmasukId).val());
 });
 
+$(document).ready(function () {
+    $("#item-id").keyup(function () {
+        $.ajax({
+            type: 'GET',
+            url: '/api/item',
+            data: {
+                search: $("#item-id").val()
+            },
+            dataType: 'json',
+            success: function success(data) {
+                $('#item-id-data').empty();
+                $(data).each(function () {
+                    itemList = "<option value=\" " + this.id + "\">" + this.id + " - " + this.name + "</option>";
+                    $('#item-id-data').append(itemList);
+                    $('#item-id-data').attr('size', data.length);
+                });
+            }
+        });
+    });
+});
+
+$(document).ready(function () {
+    $("#item-id-data").click(function () {
+        $('#item-id-data').attr('size', 1);
+    });
+});
+
 /***/ }),
 /* 37 */
 /***/ (function(module, exports) {

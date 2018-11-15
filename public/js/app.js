@@ -36032,30 +36032,45 @@ $('#itemmasukDeleteModal').on('show.bs.modal', function (e) {
     $(deleteForm).get(0).setAttribute('action', '/itemmasuk/' + $(deleteForm.itemmasukId).val());
 });
 
+//Ajax request when user input some value on itemid
 $(document).ready(function () {
     $("#item-id").keyup(function () {
         $.ajax({
             type: 'GET',
             url: '/api/item',
             data: {
-                search: $("#item-id").val()
+                search: $("#item-id").val() //send GET search parameter according to the user input
             },
             dataType: 'json',
             success: function success(data) {
+                // if request is success, reset all dropdown to empty
                 $('#item-id-data').empty();
+                $('#item-id-data').show(); //show dropdown
                 $(data).each(function () {
+                    //loop all the json object
                     itemList = "<option value=\" " + this.id + "\">" + this.id + " - " + this.name + "</option>";
-                    $('#item-id-data').append(itemList);
-                    $('#item-id-data').attr('size', data.length);
+                    $('#item-id-data').append(itemList); //append the list, adding it to <option>
+                    $('#item-id-data').attr('size', data.length); //change the size of the dropdown value accordingly
                 });
             }
         });
     });
 });
 
+//when user click on the item data, minimize the dropdown
 $(document).ready(function () {
     $("#item-id-data").click(function () {
         $('#item-id-data').attr('size', 1);
+    });
+});
+
+//when user change the value of the data, also change item-id input value.
+$(document).ready(function () {
+    $("#item-id-data").change(function () {
+        $('#item-id').val($('#item-id-data').val());
+    });
+    $("#item-id-data").blur(function () {
+        $('#item-id').val($('#item-id-data').val());
     });
 });
 

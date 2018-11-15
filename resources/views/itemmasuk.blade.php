@@ -55,11 +55,11 @@
             <input type="text" id="item-id" class="form-control" placeholder="Search by ID or Name" autocomplete="off">
          </div>  
          <div class="form-group">
-            <select class="form-control" name="item-id-data" id="item-id-data"></select>
+            <select class="form-control" name="item-id-data" id="item-id-data" style="display:none"></select>
          </div>
         <div class="form-group">
             <label for="id">Quantity</label>
-            <input type="number" class="form-control" id="quantity" name="quantity" required>    
+            <input type="number" class="form-control" id="quantity" name="quantity" min="1" required>    
         </div>
         <div class="form-group">
             <label for="id">Harga</label>

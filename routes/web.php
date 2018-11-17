@@ -37,6 +37,7 @@ Route::get('/invoicemasuk/{invoicemasuk}', 'InvoiceMasukController@show');
 
 //Invoice Keluar Controller
 Route::get('/invoicekeluar', 'InvoiceKeluarController@index');
+Route::post('/invoicekeluar', 'InvoiceKeluarController@store');
 
 
 //Manufacturer

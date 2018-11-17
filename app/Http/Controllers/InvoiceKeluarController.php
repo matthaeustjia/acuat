@@ -15,4 +15,17 @@ class InvoiceKeluarController extends Controller
         ->paginate(10);
         return view('invoicekeluar', compact('customers'), compact('invoicekeluars'));
     }
+
+    public function store(Request $request)
+    {
+        $validate = $request->validate([
+            'customer_id' => 'required'
+        ]);
+
+        InvoiceKeluar::create([
+            'customer_id' => request('customer_id')
+        ]);
+
+        return redirect()->action('InvoiceKeluarController@index')->withSuccess('Sukses menambah invoice keluar');
+    }
 }

@@ -35,6 +35,10 @@ Route::patch('/invoicemasuk/{invoicemasuk}', 'InvoiceMasukController@update');
 Route::get('/invoicemasuk/manufacturer', 'InvoiceMasukController@manufacturer');
 Route::get('/invoicemasuk/{invoicemasuk}', 'InvoiceMasukController@show');
 
+//Invoice Keluar Controller
+Route::get('/invoicekeluar', 'InvoiceKeluarController@index');
+
+
 //Manufacturer
 Route::get('/manufacturer', 'ManufacturerController@index');
 Route::post('/manufacturer', 'ManufacturerController@store');

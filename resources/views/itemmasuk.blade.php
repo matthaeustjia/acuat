@@ -55,7 +55,7 @@
             <input type="text" id="item-id" class="form-control" placeholder="Search by ID or Name" autocomplete="off">
          </div>  
          <div class="form-group">
-            <select class="form-control" name="item-id-data" id="item-id-data" style="display:none"></select>
+            <select class="form-control" name="item-id-data" id="item-id-data" style="display:none" required></select>
          </div>
         <div class="form-group">
             <label for="id">Quantity</label>

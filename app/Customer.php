@@ -13,4 +13,9 @@ class Customer extends Model
     {
         return $query->where('name', 'LIKE', '%'.$value.'%');
     }
+    
+    public function invoicekeluars()
+    {
+        return $this->hasMany('App\InvoiceKeluar');
+    }
 }

@@ -39,4 +39,15 @@ class InvoiceKeluarController extends Controller
         $invoicekeluar->delete();
         return redirect()->action('InvoiceKeluarController@index')->withSuccess('Sukses Mendelete Invoice Keluar');
     }
+
+    public function update(Request $request, InvoiceKeluar $invoicekeluar)
+    {
+        $validate = $request->validate([
+            'customer_id' => 'required'
+        ]);
+
+        $invoicekeluar->customer_id = request('customer_id');
+        $invoicekeluar->save();
+        return redirect()->action('InvoiceKeluarController@index')->withSuccess('Sukses mengedit invoice keluar');
+    }
 }

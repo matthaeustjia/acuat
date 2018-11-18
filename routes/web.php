@@ -39,7 +39,7 @@ Route::get('/invoicemasuk/{invoicemasuk}', 'InvoiceMasukController@show');
 Route::get('/invoicekeluar', 'InvoiceKeluarController@index');
 Route::post('/invoicekeluar', 'InvoiceKeluarController@store');
 Route::delete('/invoicekeluar/{invoicekeluar}', 'InvoiceKeluarController@destroy');
-
+Route::patch('invoicekeluar/{invoicekeluar}', 'InvoiceKeluarController@update');
 //Manufacturer
 Route::get('/manufacturer', 'ManufacturerController@index');
 Route::post('/manufacturer', 'ManufacturerController@store');

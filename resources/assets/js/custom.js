@@ -94,6 +94,12 @@ $('#invoicekeluarDeleteModal').on('show.bs.modal', function (e) {
     $(deleteForm).get(0).setAttribute('action', '/invoicekeluar/' + invoiceKeluarId);
 });
 
+//EditModal
+$('#invoicekeluarEditModal').on('show.bs.modal', function (e) {
+    var invoicekeluarId = $(e.relatedTarget).data('invoicekeluar-id');
+    $(editForm).get(0).setAttribute('action', '/invoicekeluar/' + invoicekeluarId);
+});
+
 //ItemMasukModal
 //Delete Modal
 $('#itemmasukDeleteModal').on('show.bs.modal', function (e) {

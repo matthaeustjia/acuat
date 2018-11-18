@@ -53,7 +53,7 @@
 @section('EditModalContent')
     <div class="modal-body">  
         <div class="form-group">
-            <label for="customer_id">Supplier</label>
+            <label for="customer_id">Customer</label>
             <select class="form-control" name="customer_id" id="customer_id">
                 @foreach($customers as $customer)
                 <option value="{{$customer->id}}">{{$customer->name}}</option>
@@ -66,7 +66,7 @@
 @section('AddModalContent')
     <div class="modal-body">    
         <div class="form-group">
-            <label for="customer_id">Supplier</label>
+            <label for="customer_id">Customer</label>
             <select class="form-control" name="customer_id" id="customer_id">
                 @foreach($customers as $customer)
                 <option value="{{$customer->id}}">{{$customer->name}}</option>

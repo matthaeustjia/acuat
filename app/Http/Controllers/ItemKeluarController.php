@@ -36,4 +36,10 @@ class ItemKeluarController extends Controller
 
         return redirect()->action('ItemKeluarController@show', $id)->withSuccess('Sukses Menambah Item');
     }
+
+    public function destroy(ItemKeluar $itemkeluar)
+    {
+        $itemkeluar->delete();
+        return redirect()->back()->withSuccess('Mendelete Item Success');
+    }
 }

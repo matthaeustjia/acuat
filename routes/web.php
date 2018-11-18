@@ -64,4 +64,4 @@ Route::delete('/itemmasuk/{itemmasuk}', 'ItemMasukController@destroy');
 //Item Keluar Controller
 Route::get('/itemkeluar/{id}', 'ItemKeluarController@show');
 Route::post('/itemkeluar/{id}', 'ItemKeluarController@store');
-Route::delete('/itemkeluar/{itemmasuk}', 'ItemKeluarController@destroy');
+Route::delete('/itemkeluar/{itemkeluar}', 'ItemKeluarController@destroy');

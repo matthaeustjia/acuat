@@ -43,7 +43,7 @@
 @section('DeleteModalContent')
     <div class="modal-body">    
         <p>Are you sure you wanna delete Item keluar?
-            <input class="border-0" type="text" id="itemkeluarId" name="itemkeluarId" hidden> 
+            <input class="border-0" type="text" id="itemkeluarId" name="itemkeluarId" readonly> 
         </p>     
     </div>
 @endsection

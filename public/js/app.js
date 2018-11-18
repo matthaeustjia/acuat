@@ -36046,6 +36046,14 @@ $('#itemmasukDeleteModal').on('show.bs.modal', function (e) {
     $(deleteForm).get(0).setAttribute('action', '/itemmasuk/' + $(deleteForm.itemmasukId).val());
 });
 
+//ItemKeluar
+//Delete Modal
+$('#itemkeluarDeleteModal').on('show.bs.modal', function (e) {
+    var itemkeluarId = $(e.relatedTarget).data('itemkeluar-id');
+    $(e.currentTarget).find('input[name="itemkeluarId"]').val(itemkeluarId);
+    $(deleteForm).get(0).setAttribute('action', '/itemkeluar/' + $(deleteForm.itemkeluarId).val());
+});
+
 //Autocomplete dropdown, send ajax get when user type.
 //Ajax request when user input some value on itemid
 $(document).ready(function () {

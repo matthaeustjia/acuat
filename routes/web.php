@@ -40,6 +40,7 @@ Route::get('/invoicekeluar', 'InvoiceKeluarController@index');
 Route::post('/invoicekeluar', 'InvoiceKeluarController@store');
 Route::delete('/invoicekeluar/{invoicekeluar}', 'InvoiceKeluarController@destroy');
 Route::patch('invoicekeluar/{invoicekeluar}', 'InvoiceKeluarController@update');
+
 //Manufacturer
 Route::get('/manufacturer', 'ManufacturerController@index');
 Route::post('/manufacturer', 'ManufacturerController@store');
@@ -59,3 +60,8 @@ Route::get('/customer/search', 'CustomerController@search');
 Route::get('/itemmasuk/{id}', 'ItemMasukController@show');
 Route::post('/itemmasuk/{id}', 'ItemMasukController@store');
 Route::delete('/itemmasuk/{itemmasuk}', 'ItemMasukController@destroy');
+
+//Item Keluar Controller
+Route::get('/itemkeluar/{id}', 'ItemKeluarController@show');
+Route::post('/itemkeluar/{id}', 'ItemKeluarController@store');
+Route::delete('/itemkeluar/{itemmasuk}', 'ItemKeluarController@destroy');

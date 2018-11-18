@@ -8,7 +8,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-        @if(Request::is('itemmasuk/*'))
+        @if(Request::is('itemmasuk/*') || Request::is('itemkeluar/*'))
           <form action="/{{Request::path()}}" method="POST">
         @else
           <form action="/@yield('currentpage')/" method="POST">

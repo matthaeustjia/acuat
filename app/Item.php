@@ -21,6 +21,11 @@ class Item extends Model
         return $this->hasMany('App\ItemMasuk');
     }
 
+    public function itemkeluars()
+    {
+        return $this->hasMany('App\ItemKeluar');
+    }
+    
     public function countStock()
     {
         return $this->itemmasuks->sum('quantity');

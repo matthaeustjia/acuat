@@ -36024,6 +36024,14 @@ $('#invoicemasukEditModal').on('show.bs.modal', function (e) {
     $(editForm).get(0).setAttribute('action', '/invoicemasuk/' + invoicemasukId);
 });
 
+//InvoiceKeluar Modal
+//Delete Modal
+$('#invoicekeluarDeleteModal').on('show.bs.modal', function (e) {
+    var invoiceKeluarId = $(e.relatedTarget).data('invoicekeluar-id');
+    $(e.currentTarget).find('input[name="invoicekeluarId"]').val(invoiceKeluarId);
+    $(deleteForm).get(0).setAttribute('action', '/invoicekeluar/' + invoiceKeluarId);
+});
+
 //ItemMasukModal
 //Delete Modal
 $('#itemmasukDeleteModal').on('show.bs.modal', function (e) {
@@ -36032,6 +36040,7 @@ $('#itemmasukDeleteModal').on('show.bs.modal', function (e) {
     $(deleteForm).get(0).setAttribute('action', '/itemmasuk/' + $(deleteForm.itemmasukId).val());
 });
 
+//Autocomplete dropdown, send ajax get when user type.
 //Ajax request when user input some value on itemid
 $(document).ready(function () {
     $("#item-id").keyup(function () {

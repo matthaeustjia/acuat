@@ -44,7 +44,7 @@
 
 @section('DeleteModalContent')
     <div class="modal-body">    
-        <p>Are you sure you wanna delete?
+        <p>Are you sure you wanna delete? Invoice No: 
             <input class="border-0" type="text" id="invoicemasukId" name="invoicemasukId" readonly> 
         </p>     
     </div>

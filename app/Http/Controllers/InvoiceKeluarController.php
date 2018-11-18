@@ -8,6 +8,11 @@ use App\Customer;
 
 class InvoiceKeluarController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $customers = Customer::get();
@@ -27,5 +32,11 @@ class InvoiceKeluarController extends Controller
         ]);
 
         return redirect()->action('InvoiceKeluarController@index')->withSuccess('Sukses menambah invoice keluar');
+    }
+
+    public function destroy(InvoiceKeluar $invoicekeluar)
+    {
+        $invoicekeluar->delete();
+        return redirect()->action('InvoiceKeluarController@index')->withSuccess('Sukses Mendelete Invoice Keluar');
     }
 }

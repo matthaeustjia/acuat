@@ -22,7 +22,18 @@
         <th>{{$invoicekeluar->customer->email}}</th>
         <th>{{number_format($invoicekeluar->getInvoiceTotal())}}</th>
         <th>{{$invoicekeluar->created_at->format('d/m/Y')}}</th>
-  
+        <th>
+        <a href="/itemkeluar/{{$invoicekeluar->id}}"><i class="btn-sm btn-primary fa fa-list"></i></a>
+        <button type="button" class="btn-sm btn-warning" 
+            data-invoicekeluar-id="{{$invoicekeluar->id}}" 
+            data-toggle="modal" data-target="#invoicekeluarEditModal" ><i class="far fa-edit fa-fw"></i>
+        </button>
+        <button type="button" class="btn-sm btn-danger"
+            data-invoicekeluar-id="{{$invoicekeluar->id}}" 
+            data-toggle="modal" data-target="#invoicekeluarDeleteModal">
+            <i class="far fa-trash-alt fa-fw"></i>
+        </button> 
+        </th>
     </tr>
     @endforeach
 @endsection
@@ -33,7 +44,7 @@
 
 @section('DeleteModalContent')
     <div class="modal-body">    
-        <p>Are you sure you wanna delete?
+        <p>Are you sure you wanna delete? Invoice No: 
             <input class="border-0" type="text" id="invoicekeluarId" name="invoicekeluarId" readonly> 
         </p>     
     </div>

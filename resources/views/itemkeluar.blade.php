@@ -5,7 +5,7 @@
     <tr>
         <div class="d-flex justify-content-between">
             @if(!$itemkeluars->isEmpty())
-                <a href="/invoicekeluar/{{$itemkeluars[0]->invoicekeluar_id}}"><h5>Invoice ID - {{$itemkeluars[0]->invoicekeluar_id}}</h5></a>
+                <a href="/invoicekeluar/{{$itemkeluars[0]->invoiceKeluar_id}}"><h5>Invoice ID - {{$itemkeluars[0]->invoiceKeluar_id}}</h5></a>
             @endif
         </div>
         <th>Item ID</th>

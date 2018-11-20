@@ -20,18 +20,18 @@
 @section('tablebody')
     @foreach($itemmasuks as $itemmasuk)
     <tr>
-        <th>{{$itemmasuk->item->id}}</th>    
-        <th>{{$itemmasuk->item->name}}</th>  
-        <th>{{$itemmasuk->quantity}}</th>  
-        <th>{{number_format($itemmasuk->price)}}</th>
-        <th>{{number_format($itemmasuk->getTotal())}}</th>
-        <th>
+        <td>{{$itemmasuk->item->id}}</td>    
+        <td>{{$itemmasuk->item->name}}</td>  
+        <td>{{$itemmasuk->quantity}}</td>  
+        <td>{{number_format($itemmasuk->price)}}</td>
+        <td>{{number_format($itemmasuk->getTotal())}}</td>
+        <td>
         <button type="button" class="btn-sm btn-danger"
             data-itemmasuk-id="{{$itemmasuk->id}}"
             data-toggle="modal" data-target="#itemmasukDeleteModal">
             <i class="far fa-trash-alt fa-fw"></i>
         </button>
-        </th>
+        </td>
     </tr>
     @endforeach
 @endsection

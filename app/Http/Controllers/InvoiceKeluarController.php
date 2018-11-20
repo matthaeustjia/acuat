@@ -21,6 +21,13 @@ class InvoiceKeluarController extends Controller
         return view('invoicekeluar', compact('customers'), compact('invoicekeluars'));
     }
 
+    public function show($id)
+    {
+        $customers = Customer::get();
+        $invoicekeluars = InvoiceKeluar::with('customer')->where('id', $id)->paginate(10);
+        return view('invoicekeluar', compact('customers'), compact('invoicekeluars'));
+    }
+
     public function store(Request $request)
     {
         $validate = $request->validate([

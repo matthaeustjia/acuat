@@ -26,6 +26,7 @@ Route::patch('/item/{item}', 'ItemController@update');
 Route::get('/item/search', 'ItemController@search');
 Route::get('/api/item', 'ItemController@searchApi');
 
+Route::get('/item/itemhistory/{id}', 'ItemController@history');
 
 //Invoice Masuk Contoller
 Route::get('/invoicemasuk', 'InvoiceMasukController@index');
@@ -40,6 +41,7 @@ Route::get('/invoicekeluar', 'InvoiceKeluarController@index');
 Route::post('/invoicekeluar', 'InvoiceKeluarController@store');
 Route::delete('/invoicekeluar/{invoicekeluar}', 'InvoiceKeluarController@destroy');
 Route::patch('invoicekeluar/{invoicekeluar}', 'InvoiceKeluarController@update');
+Route::get('/invoicekeluar/{invoicekeluar}', 'InvoiceKeluarController@show');
 
 //Manufacturer
 Route::get('/manufacturer', 'ManufacturerController@index');

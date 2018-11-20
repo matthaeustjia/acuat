@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Item;
 use Illuminate\Http\Request;
+use DB;
 
 class ItemController extends Controller
 {
@@ -12,6 +13,8 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    
     public function __construct()
     {
         $this->middleware('auth');
@@ -23,6 +26,11 @@ class ItemController extends Controller
         return view('item', compact('items'));
     }
 
+    public function history($id)
+    {
+        $items = Item::ItemHistory($id)->get();
+        return view('itemhistory', compact('items'))->with('item_id', $id);
+    }
     /**
      * Store a newly created resource in storage.
      *

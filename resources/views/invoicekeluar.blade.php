@@ -4,7 +4,7 @@
 @section('tablehead')
     <tr>
         <th>ID</th>
-        <th>Nama Supplier</th>
+        <th>Nama Customer</th>
         <th>Telepon</th>
         <th>Email</th>
         <th>Total</th>
